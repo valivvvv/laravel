@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'PostController@index');
+Route::get('/', 'PostController@index')->name('home');
 
 Route::get('/posts', 'PostController@index');
 
@@ -15,3 +15,14 @@ Route::post('/posts/{post}/comments', 'CommentController@store');
 Route::get('/tasks', 'TasksController@index');
 
 Route::get('/tasks/{task}', 'TasksController@show');
+
+
+Route::get('/register', 'RegistrationController@create');
+
+Route::post('/register', 'RegistrationController@store');
+
+Route::get('/login', 'SessionController@create')->name('login');
+
+Route::post('/login', 'SessionController@store');
+
+Route::get('/logout', 'SessionController@destroy');
