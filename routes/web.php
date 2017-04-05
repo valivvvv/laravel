@@ -1,5 +1,7 @@
 <?php
 
+dd(resolve('App\Billing\Stripe'));
+
 Route::get('/', 'PostController@index')->name('home');
 
 Route::get('/posts', 'PostController@index');
