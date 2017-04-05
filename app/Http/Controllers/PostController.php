@@ -15,8 +15,7 @@ class PostController extends Controller
 
     public function index(Posts $posts)
     {
-        // Making use of use App\Repositories\Posts; just for learning
-        $posts = $posts->all();
+        $posts = $posts->all(); // Making use of use App\Repositories\Posts; just for learning
 
     	// $posts = Post::latest()
      //        ->filter(request(['month', 'year']))
