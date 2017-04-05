@@ -17,10 +17,17 @@
       <div class="container">
 
         <div class="row">
+          <div class="col-sm-9">
 
-          @foreach ( $posts as $post )
-            @include('posts.listing')
-          @endforeach
+            @foreach ( $posts as $post )
+              @include('posts.listing')
+            @endforeach
+
+          </div>
+
+          <div class="col-sm-3">
+            @include('layouts.sidebar')
+          </div>
 
         </div>
 
