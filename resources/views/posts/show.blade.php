@@ -2,7 +2,18 @@
 
 @section('content')
 
-	<div>{{ $post->created_at->toFormattedDateString() }}</div>
+	<div class="post-meta">
+		<span>On <b>{{ $post->created_at->toFormattedDateString() }}</b></span>
+
+		@if ( count($post->tags) )
+			in
+			@foreach ($post->tags as $tag)
+				<a href="/posts/tags/{{ $tag->name }}">
+					{{ $tag->name }}
+				</a>
+			@endforeach
+		@endif
+	</div>
 	<h3>
 		<a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
 	</h3>
